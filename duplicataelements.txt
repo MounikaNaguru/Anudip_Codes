@@ -1,0 +1,27 @@
+
+import java.util.HashSet;
+
+public class FindDuplicates {
+
+    public static void findDuplicates(int[] array) {
+        HashSet<Integer> uniqueSet = new HashSet<>();
+        HashSet<Integer> duplicateSet = new HashSet<>();
+
+        for (int element : array) {
+            if (!uniqueSet.add(element)) {
+                // If the element is already in uniqueSet, it's a duplicate
+                duplicateSet.add(element);
+            }
+        }
+
+        System.out.println("Duplicate elements in the array: " + duplicateSet);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5, 2,  6, 7, 8, 9, 4};
+        findDuplicates(array);
+    }
+}
+
+output:
+Duplicate elements in the array: [2, 4]
